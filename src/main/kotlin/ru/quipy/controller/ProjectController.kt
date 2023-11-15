@@ -11,8 +11,6 @@ import ru.quipy.api.ProjectCreatedEvent
 import ru.quipy.api.TaskCreatedEvent
 import ru.quipy.core.EventSourcingService
 import ru.quipy.logic.ProjectAggregateState
-import ru.quipy.logic.addTask
-import ru.quipy.logic.create
 import java.util.*
 
 @RestController
@@ -31,10 +29,8 @@ class ProjectController(
         return projectEsService.getState(projectId)
     }
 
-    @PostMapping("/{projectId}/tasks/{taskName}")
+    /*@PostMapping("/{projectId}/tasks/{taskName}")
     fun createTask(@PathVariable projectId: UUID, @PathVariable taskName: String) : TaskCreatedEvent {
-        return projectEsService.update(projectId) {
-            it.addTask(taskName)
-        }
-    }
+        return projectEsService.update(projectId) { it.addTask(taskName) }
+    }*/
 }
